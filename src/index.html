@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2048</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="themes.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="script.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+	
+	<div id="game">
+		<div id="startGameMenu">
+			<button id="playButton">Play</button>
+			<audio id="musicPlayer" src="Theme_Songs/default_threme.mp3" controls="true" loop="true"></audio>
+		</div>
+
+		<div id="selectFieldSizeMenu">
+			<div id="openShop"></div>
+			
+			<div id="fieldSizeOptions">
+				<div id="fieldSize3X3" fieldSize="3">3X3</div>
+				<div id="fieldSize4X4" fieldSize="4">4X4</div>
+				<div id="fieldSize5X5" fieldSize="5">5X5</div>
+			</div>
+			<button id="selectFieldSizeButton">Select</button>
+
+
+			<div id="shop">
+				<div id="currencyDialog">1000<span style="color: gold; font-size: 1rem; font-weight: 900">*</span></div>
+				<div id="currencySpentAnimation">0</div>
+				<div id="closeShop">X</div>
+				<span id="themeShopTittle">Theme shop</span>
+				<div id="themeShop"></div>
+			</div>
+		</div>
+
+		<div id="gameField">
+			<div id="navigation">
+				<div id="gameInfo">
+					<p id="gameTittle">2048</p>
+					<span id="authorNameText">By YURKO</span>
+				</div>
+
+				<div id="gameTools">
+					<div id="pointsSection">
+						<div id="pointsDialog">
+							<span id="text">Points</span><br><span id="pointsCount">0</span>
+							<div id="addPointsAnimation">0</div>
+						</div>
+
+						<div id="bestScoreDialog">
+							<span id="text">Best</span><br><span id="bestScoreCount">0</span>
+						</div>
+					</div>
+					<button id="newGameButton">New game</button>
+				</div>
+			</div>
+
+			<div id="blockFieldContainer">
+				<div id="continueGameWindow">
+					<span>Continue for 100<span style="color: gold; font-weight: 900">*</span>?</span>
+					<button id="continueGameButton">Continue</button>
+					<button id="rejectContinuingGameButton">No</button>
+				</div>
+
+				<div id="endGameWindow">
+					<p>Game over</p>
+					<p id="earnedStars">0</p>
+					<button id="goToMainMenuButton">Main menu</button>
+				</div>
+
+				<div id="blockField"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

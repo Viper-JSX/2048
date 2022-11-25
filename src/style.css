@@ -1,0 +1,528 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+:root{
+	--textColor: white;
+	--animationDuration: 300;
+}
+
+body{
+	width: 100vw;
+	height: 100vw;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+p, span, button, div{
+	font-family: monospace;
+	cursor: default;
+}
+
+#game{
+	width: 100vw;
+	height: 100vh;
+	background: #FAF8EF;
+	transition: 0.5s background;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+#startGameMenu{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 30, 110, 0.3);
+	transition: 1s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#startGameMenu > button{
+	width: 5rem;
+	height: 3rem;
+	color: var(--textColor);
+	background: #444444;
+	border: 0.3rem solid black;
+	border-radius: 1rem;
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+
+#selectFieldSizeMenu{
+	width: 100%;
+	height: 100%;
+	display: none;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+#fieldSizeOptions{
+	height: 40%;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+#fieldSizeOptions > div{
+	width: 7rem;
+	height: 2.5rem;
+	color: white;
+	background: gray;
+	border: 2px solid black;
+	transition: 0.2s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#fieldSizeOptions > #fieldSize4X4{
+	background: #222222;
+}
+
+#fieldSizeOptions > div:hover{
+	width: 6.9rem;
+	height: 2.3rem;
+	border-color: white;
+	border-radius: 0.3rem;
+}
+
+#shop{
+	width: var(--width);
+	height: 100%;
+	padding-top: 1.5rem;
+	background: #CDC1B4;
+	border-radius: 1rem;
+	transition: 0.4s;
+	opacity: 0;
+	position: absolute;
+	overflow: auto;
+	display: none;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	--width: 70%;
+}
+
+#currencyDialog{
+	top: 0.3rem;
+	left: 1rem;
+	color: white;
+	background: #222222;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	position: absolute;
+	font-family: monospace;
+}
+
+#currencySpentAnimation{
+	top: 0rem;
+	left: 2rem;
+	color: red;
+	opacity: 0;
+	position: absolute;
+	animation-name: none;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	z-index: 2;
+}
+
+#currencyDialog, #currencySpentAnimation, #themeShopTittle{
+	font-weight: 900;
+}
+
+#shop > span{
+	top: 0;
+	position: absolute;
+}
+
+#themeShop{
+	width: 100%;
+	max-height: 100vh;
+	max-width: 400px;
+	border: 0.2rem solid black;
+	border-radius: 0.7rem;
+	padding: ;
+	overflow: auto;
+}
+
+#themeShopTittle{
+	color: white;
+	background: black;
+	border: 1px solid white;
+	border-radius: 0.3rem;
+}
+
+#themeShop > div{
+	width: 100%;
+	height: 3rem;
+	font-family: monospace;
+	font-size: 1rem;
+	font-weight: 900;
+	border: 0.2rem solid black;
+	border-radius: 0.5rem;
+	margin-bottom: 2px;
+	position: relative;
+	transition: 0.2s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#themeShop > div:hover{
+	border-color: gray;
+	font-size: 1.1rem;
+}
+
+#themeShop > div > div{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: white;
+	background: rgba(100, 100, 100, 0.7);
+	font-size: 1rem;
+	font-weight: 900;
+	position: absolute;
+	transition: 1s opacity;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#openShop{
+	width: 5rem;
+	height: 3rem;
+	background-image: url("Files/shopping-cart.svg"), linear-gradient(90deg, black 0%, white);
+	background-size: 100% 100%;
+	border: 0.2rem solid black;
+	border-radius: 0.5rem;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	transition: 1s;
+}
+
+#openShop:hover{
+	background-position: 5rem 5rem;
+}
+
+#closeShop{
+	width: 1rem;
+	height: 1rem;
+	color: var(--textColor);
+	background: black;
+	cursor: pointer;
+	text-align: center;
+ 	position: absolute;
+ 	transition: 0.2s;
+ 	top: 0;
+ 	right: 0;
+ }
+
+#closeShop:hover{
+	background: red;
+}
+
+#gameField{
+	width: 512px;
+	height: 100%;
+	display: none;
+}
+
+#navigation{
+	width: 100%;
+	height: 20%;
+	background: ;/*rgba(10, 10, 10, 0.2);*/
+	border: 1px solid black;
+	border-radius: 1rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#gameInfo{
+	text-align: center;
+}
+
+#gameTittle{
+	color: #776E65;
+	font-size: 3rem;
+	font-weight: 900;
+}
+
+#authorNameText{
+	padding: 0.2rem;
+	color: var(--textColor);
+	background: black;
+	font-size: 0.7rem;
+	font-weight: 800;
+	border: 1px solid white;
+	border-radius: 0.2rem;
+}
+
+#gameTools{
+	height: 80%;
+	color: var(--textColor);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#pointsSection > div{
+	width: 80px;
+	height: 40px;
+	background: gray;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#pointsSection{
+	display: flex;
+}
+
+#pointsDialog{
+	position: relative;
+}
+
+#pointsSection #text{
+	color: lightGray;
+}
+
+#pointsCount, #bestScoreCount{
+	font-size: 1rem;
+	font-family: monospace;
+}
+
+#addPointsAnimation{
+	top: 50%;
+	right: 10px;
+	position: absolute;
+	opacity: 0;
+	animation-duration: var(--animationDuration);
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	--animationDuration: 200ms;
+}
+
+#newGameButton{
+	width: 5rem;
+	height: 2rem;
+	font-weight: 600;
+	color: #FAF8EF;
+	background: #8F7A66;
+	border: 2px solid black;
+	border-radius: 0.5rem;
+	font-family: sans-serif;
+	font-weight: 800;
+	transition: 0.3s;
+	align-self: end;
+}
+
+#newGameButton:hover{
+	color: black;
+	background: white;
+}
+
+#blockFieldContainer{
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#blockField{
+	width: 512px;
+	height: 512px;
+	background: #CDC1B4;
+	border-left: 0.7rem solid #BBADA0;
+	border-bottom: 0.7rem solid #BBADA0;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	position: relative;
+	transition: background 1s;
+	touch-action: none;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+#block{
+	width: 100%;
+	height: 100%;
+	color: white;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	font-weight: 800;
+	font-family: sans-serif;
+	transition-timing-function: linear;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	animation-duration: 100ms; /*animationDuration / 2*/
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+
+#block[value = '2'], #block[value = '4']{
+	color: #776E65;
+}
+
+#blockContainer{
+	border-top: 0.7rem solid #BBADA0;
+	border-right: 0.7rem solid #BBADA0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#continueGameWindow{
+	width: 512px;
+	height: 512px;
+	background: rgba(205, 193, 180, 0.5);
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+
+}
+
+#continueGameWindow > span{
+	color: var(--textColor);
+	background: #222222;
+	border-radius: 0.2rem;
+	font-weight: 900;
+}
+
+#endGameWindow{
+	width: 512px;
+	height: 512px;
+	background: rgba(205, 193, 180, 0.5);
+	border-radius: 1rem;
+	opacity: 0;
+	transition: opacity 1s;
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#endGameWindow > p{
+	color: var(--textColor);
+	margin-bottom: 1rem;
+	font-size: 1.4rem;
+	font-weight: 900;
+}
+
+#endGameWindow > #earnedStars{
+	background: gray;
+	padding: 0 0.5rem 0 0.5rem;
+	border: 0.2rem solid black;
+	border-radius: 0.5rem;
+}
+
+#goToMainMenuButton, #selectFieldSizeButton, #continueGameButton, #rejectContinuingGameButton{
+	width: 5rem;
+	height: 3rem;
+	color: #222222/*var(--textColor)*/;
+	background: #CDC1B4;
+	margin: 0.5rem 0 0.5rem 0;
+	font-weight: 900;
+	border: 2px solid black;
+	border-radius: 0.5rem;
+	transition: 0.3s;
+}
+
+#goToMainMenuButton:hover, #selectFieldSizeButton:hover, #continueGameButton:hover, #rejectContinuingGameButton:hover{
+	color: white;
+	background: black;
+}
+
+#musicPlayer{
+	display: none;
+}
+
+
+
+@media screen and (max-width: 520px){
+	#gameField{
+		width: 300px;
+		height: 100%;
+	}
+
+	#blockField, #continueGameWindow, #endGameWindow{
+		width: 300px;
+		height: 300px;
+	}
+
+	#block{
+		font-size: 1.3rem;
+	}
+
+	#shop{
+		--width: 95%;
+	}
+}
+
+
+
+@keyframes blockAppear{
+	0%{
+		transform: scale(0);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+@keyframes combining{
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(0.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+@keyframes spendingCurrency{
+	0%{
+		top: 0rem;
+		left: 2rem;
+		opacity: 1;
+	}
+	50%{
+		opacity: 0.9;
+	}
+	100%{
+		top: -1rem;
+		opacity: 0;
+	}
+}
+
+@keyframes addingPoints{
+	0%{
+		opacity: 1;
+		top: 50%;
+	}
+	100%{
+		top: 10%;
+	}
+}
