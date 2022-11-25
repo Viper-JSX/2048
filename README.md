@@ -5,7 +5,7 @@
 * Technologies
 * How to run
 
-* General info
+# General info
 2048 is a clone of legendary game created a decade ago, the aim is to move tiles and join the same ones
 which will output another higher order tile for example: 
 * 2 and 2 => 4
@@ -16,7 +16,7 @@ identical ones. Unlike original game, this game also has currency (*) which you 
 using this currency you can buy themes and select which one you like most of all
 
 
-Technologies (and used ones)
+#Technologies
 * HTML
 * CSS
 * JavaScript
