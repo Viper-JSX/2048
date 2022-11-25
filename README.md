@@ -1,6 +1,6 @@
 # 2048
 
-#Table of contents: 
+# Table of contents: 
 * General info
 * Technologies
 * How to run
@@ -22,6 +22,7 @@ using this currency you can buy themes and select which one you like most of all
 * CSS
 * JavaScript
 
-* How to run
-You can simply drag and drop index.html file in your browser
+# How to run
+* Open the link: https://2048-by-viper-jsx.netlify.app/
+* Or you can simply drag and drop index.html file in your browser
 
