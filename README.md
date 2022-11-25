@@ -1,4 +1,4 @@
-#2048
+# 2048
 
 #Table of contents: 
 * General info
@@ -16,7 +16,7 @@ identical ones. Unlike original game, this game also has currency (*) which you 
 using this currency you can buy themes and select which one you like most of all
 
 
-#Technologies
+# Technologies
 * HTML
 * CSS
 * JavaScript
