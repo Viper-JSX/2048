@@ -33,7 +33,7 @@ let blockField = document.getElementById("blockField");
 
 let musicPlayer = document.getElementById("musicPlayer");
 
-let playerMoney = 1000000;
+let playerMoney = 1000;
 let blocks = [];
 let theme = themes[0];
 let deltaX;
